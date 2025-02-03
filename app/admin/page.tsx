@@ -3,7 +3,6 @@ import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { prisma } from "@/db";
-import moment from "moment";
 
 export default async function AdminPage() {
   const session = await getServerSession();
