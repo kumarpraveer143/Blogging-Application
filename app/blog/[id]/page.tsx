@@ -4,13 +4,19 @@ import BlogView from "./_components/blog-view";
 import Image from "next/image";
 import moment from "moment";
 
-export default async function BlogPage({ params }: { params: { id: string } }) {
+interface Props {
+  params: { id: string };
+}
+
+export default async function BlogPage({ params }: Props) {
   const blog = await prisma.blogs.findFirst({
     where: {
       id: params.id,
     },
   });
+
   if (!blog) return notFound();
+
   return (
     <main>
       <h3 className="text-2xl mt-8">{blog.title}</h3>
@@ -26,7 +32,7 @@ export default async function BlogPage({ params }: { params: { id: string } }) {
               height={30}
               width={30}
               alt="user_img"
-            ></Image>
+            />
           )}
         </div>
         <div>
