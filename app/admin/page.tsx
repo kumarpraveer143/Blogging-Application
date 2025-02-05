@@ -26,19 +26,17 @@ export default async function AdminPage() {
         <div className="flex items-center justify-between"></div>
         <div className="">
           <div className="mt-5 ">
-            {blogs.map((blog) => {
-              return (
-                <div>
-                  <div key={blog.id} className="bg-muted p-6 rounded-lg mt-4">
-                    <Link href="">
-                      <div className="bg-muted p-2 rounded-lg">
-                        <h4 className="text-xl">{blog.title}</h4>
-                      </div>
-                    </Link>
-                  </div>
+            {blogs.map((blog) => (
+              <div key={blog.id}>
+                <div className="bg-muted p-6 rounded-lg mt-4">
+                  <Link href="">
+                    <div className="bg-muted p-2 rounded-lg">
+                      <h4 className="text-xl">{blog.title}</h4>
+                    </div>
+                  </Link>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </div>

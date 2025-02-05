@@ -3,7 +3,6 @@
 import { Blogs } from "@prisma/client";
 import EditorJS from "@editorjs/editorjs";
 import * as React from "react";
-import { DEFAULT_MAX_VERSION } from "tls";
 
 interface Props {
   blog: Blogs;
