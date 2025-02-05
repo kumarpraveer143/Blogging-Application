@@ -23,8 +23,8 @@ export default async function Home() {
         <div className="mt-5">
           {blogs.map((blog) => {
             return (
-              <div>
-                <div key={blog.id} className="bg-muted p-6 rounded-lg mt-4">
+              <div key={blog.id}>
+                <div className="bg-muted p-6 rounded-lg mt-4">
                   <Link href={`/blog/${blog.id}`}>
                     <div className="bg-muted p-2 rounded-lg">
                       <h4 className="text-xl">{blog.title}</h4>

@@ -53,7 +53,7 @@ const CreateBlogForm = () => {
     const { title } = values;
     const outputFromEditor = await editorRef?.current?.save();
 
-    console.log(title, outputFromEditor);
+    // console.log(title, outputFromEditor);
 
     await createBlog({
       blocks: JSON.stringify(outputFromEditor?.blocks),

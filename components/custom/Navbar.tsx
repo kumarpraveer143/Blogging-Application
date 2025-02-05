@@ -47,7 +47,7 @@ export default function Navbar() {
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={() => redirect("/")}>
-                    Blogs
+                    Blog
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => redirect("/admin")}>
                     Admin
