@@ -17,7 +17,7 @@ export default async function Home() {
   });
 
   return (
-    <div>
+    <div className="px-2">
       <div className="mt-10 flex items-center justify-between"></div>
       <div className="">
         <div className="mt-5">

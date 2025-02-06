@@ -17,7 +17,7 @@ export default async function BlogPage(props: {
   if (!blog) return notFound();
 
   return (
-    <main>
+    <main className="px-7">
       <h3 className="text-2xl mt-8">{blog.title}</h3>
       <p className="text-muted-foreground text-sm mt-2">
         {moment(blog.createdAt).format("ll")}
