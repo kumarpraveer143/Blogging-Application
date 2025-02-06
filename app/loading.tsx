@@ -1,7 +1,5 @@
 "use client";
 export default function Loading() {
-  const letters = "Namaste 🙏".split("");
-
   return (
     <div className="text-center h-screen flex items-center justify-center flex-col">
       <div role="status">
