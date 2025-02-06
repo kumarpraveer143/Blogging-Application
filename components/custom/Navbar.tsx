@@ -1,6 +1,8 @@
 "use client";
 
 import { signOut, useSession } from "next-auth/react";
+import { RiArrowDropDownLine } from "react-icons/ri";
+
 import { Button } from "../ui/button";
 import Image from "next/image";
 import {
@@ -40,7 +42,10 @@ export default function Navbar() {
                         height={35}
                       />
                     )}
-                    <p>{data.user.name}</p>
+                    <div className="flex justify-center items-center"> 
+                      {data.user.name}
+                      <RiArrowDropDownLine size={35} />
+                    </div>
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
