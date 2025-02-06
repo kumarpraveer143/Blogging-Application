@@ -29,7 +29,7 @@ export default async function AdminPage() {
             {blogs.map((blog) => (
               <div key={blog.id}>
                 <div className="bg-muted p-6 rounded-lg mt-4">
-                  <Link href="">
+                  <Link href={`/blog/${blog.id}`}>
                     <div className="bg-muted p-2 rounded-lg">
                       <h4 className="text-xl">{blog.title}</h4>
                     </div>

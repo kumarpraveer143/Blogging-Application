@@ -1,11 +1,11 @@
 "use client";
 
-import EditorJS from "@editorjs/editorjs";
 import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
+import EditorJS, { OutputData } from "@editorjs/editorjs";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -33,27 +33,29 @@ const CreateBlogForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: "",
-    }, 
+    },
   });
 
-  const editorRef: React.MutableRefObject<EditorJS | null> =
-    React.useRef<EditorJS>(null);
+  const editorRef = React.useRef<EditorJS | null>(null);
 
   React.useEffect(() => {
-    if (editorRef.current) return;
+    if (typeof window !== "undefined") {
+      import("@editorjs/editorjs").then((EditorJS) => {
+        if (editorRef.current) return;
 
-    const editor = new EditorJS({
-      holder: "editorjs",
-    });
+        const editor = new EditorJS.default({
+          holder: "editorjs",
+        });
 
-    editorRef.current = editor;
+        editorRef.current = editor;
+      });
+    }
   }, []);
 
   async function onSubmit(values: FormSchemaValues) {
     const { title } = values;
-    const outputFromEditor = await editorRef?.current?.save();
-
-    // console.log(title, outputFromEditor);
+    const outputFromEditor: OutputData | undefined =
+      await editorRef.current?.save();
 
     await createBlog({
       blocks: JSON.stringify(outputFromEditor?.blocks),

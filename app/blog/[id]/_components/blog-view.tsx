@@ -24,7 +24,7 @@ const BlogView = ({ blog }: Props) => {
     });
 
     editorRef.current = editor;
-  }, []);
+  });
 
   return (
     <div className="mt-5">
