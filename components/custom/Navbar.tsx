@@ -23,7 +23,7 @@ export default function Navbar() {
     <>
       <div className="flex justify-around py-4 bg-muted">
         <Link href="/">
-          <h3 className="text-2xl font-semibold">Blogify</h3>
+          <h3 className="text-2xl font-semibold">pkBlogs</h3>
         </Link>
         <div className="flex items-center gap-5">
           <ModeToggle />
