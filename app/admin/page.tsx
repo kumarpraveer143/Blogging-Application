@@ -15,7 +15,7 @@ export default async function AdminPage() {
     },
   });
   return (
-    <main>
+    <main className="px-7">
       <div className="mt-10 flex justify-between">
         <h3>Your Blogs({blogs.length})</h3>
         <Link href="/admin/blog/new">
