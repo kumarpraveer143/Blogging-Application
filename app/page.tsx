@@ -28,6 +28,9 @@ export default async function Home() {
                   <Link href={`/blog/${blog.id}`}>
                     <div className="bg-muted p-2 rounded-lg">
                       <h4 className="text-xl">{blog.title}</h4>
+                      <p className="text-muted-foreground text-sm mt-2">
+                        {moment(blog.createdAt).format("ll")}
+                      </p>
                       <div className="flex items-center justify-between mt-10">
                         <div className="gap-2 text-sm text-muted-foreground flex items-center">
                           <div>
@@ -46,9 +49,6 @@ export default async function Home() {
                             <p>{blog.email}</p>
                           </div>
                         </div>
-                        <p className="text-muted-foreground text-sm mt-2 text-right">
-                          {moment(blog.createdAt).format("ll")}
-                        </p>
                       </div>
                     </div>
                   </Link>
