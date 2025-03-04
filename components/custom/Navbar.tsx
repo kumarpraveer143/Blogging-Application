@@ -42,7 +42,7 @@ export default function Navbar() {
                         height={35}
                       />
                     )}
-                    <div className="flex justify-center items-center"> 
+                    <div className="flex justify-center items-center">
                       {data.user.name}
                       <RiArrowDropDownLine size={35} />
                     </div>
@@ -52,10 +52,13 @@ export default function Navbar() {
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={() => redirect("/")}>
-                    Blog
+                    Home
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => redirect("/admin")}>
-                    Admin
+                    Create blog
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => redirect("/myblog")}>
+                    My blogs
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => signOut()}>
                     Logout
